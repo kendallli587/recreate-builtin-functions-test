@@ -46,19 +46,22 @@ function concat(array1, array2) {
 
 function join(sep, array) {
     let string = "";
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length - 1; i++) {
         string += array[i];
         string += sep;
+        // Creates join() result w/o last array value
     }
-    console.log(string.length)
+    // adds last value
+    string += array[array.length - 1]
     return string;
 } 
 
 function max(array) {
     let maximum = "";
     for (let i = 0; i < array.length; i++) {
-        if (JSON.stringify(array[i]) > maximum) {
-            maximum = JSON.stringify(array[i]);
+        // Don't use JSON.stringify otherwise output 'y' will turn into "'y'" with double quotations
+        if ((array[i]) > maximum) {
+            maximum = (array[i]);
         }
     }
     return maximum;
