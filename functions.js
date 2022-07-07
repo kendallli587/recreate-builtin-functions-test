@@ -20,9 +20,12 @@ function indexOf(item, array) {
 }
 
 function reverse(array) {
-    // let copy = array.slice();
-    // console.log(copy);
-    
+    let newArray = [];
+    let start = array.length - 1;
+    for (let i = start; i >= 0; i--) {
+        newArray.push(array[i]);
+    }
+    return newArray;
 }
 
 function slice(start, stop, array) {
